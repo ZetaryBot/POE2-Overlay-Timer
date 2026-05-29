@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# POE2 Overlay Timer – Notes Template
+#
+# HOW TO CREATE A NOTE
+# ─────────────────────────────────────────────────────────────────────────────
+# Copy this file (or create a new .txt) inside this notes/ folder.
+# Use the block format below – any number of blocks per file is fine.
+#
+# Map names are separated by  /  so every language variant matches:
+#   [English Name / 繁中名稱 / 简中名称 / 한국어 이름]
+#
+# The tool reads whatever language your PoE2 client uses when it writes to
+# Client.txt, so include the name in YOUR client language at minimum.
+#
+# Content can be multiple lines.  Leading/trailing blank lines are stripped.
+# The entire content is placed on the clipboard when you press V in-game.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Map Name EN / 地圖名稱 ZH-TW]
+{
+Your note text here.
+Paste-able filter regex, reminder, boss tips, etc.
+}
+
+[Another Map / 另一個地圖 / another map alt name]
+{
+Second map notes.
+
+Multiple paragraphs are fine.
+}
