@@ -23,7 +23,8 @@ class App:
         self.config       = self._load_config()
         self.stopwatch    = Stopwatch()
         self.notes_mgr    = NotesManager(self.config)
-        self.overlay      = OverlayWindow(self.config, self.stopwatch, self.notes_mgr)
+        self.overlay      = OverlayWindow(self.config, self.stopwatch, self.notes_mgr,
+                                          save_config=self._save_config)
         self.poe_monitor  = PoeMonitor(self.config, self.overlay, self.stopwatch,
                                        debug=debug)
         self.hotkey_mgr   = HotkeyManager(

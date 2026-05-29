@@ -1,0 +1,614 @@
+# ════════════════════════════════════════════════════════════════════
+# POE2-TIPS — Zone Notes (English Player Version)
+# ════════════════════════════════════════════════════════════════════
+#
+# How to edit:
+#   - Section headers use [English Name / Chinese Name], either language will match
+#   - Write notes between { }, plain text, multi-line supported
+#   - Lines starting with # are comments and will not be displayed
+#
+# When you enter a zone, this tool will:
+#   - Find the matching section
+#   - If { } has content → show a floating card
+#   - If { } is empty → silent, no interruption
+#   - If section does not exist → also silent
+#
+# To add a zone: add a new [Zone Name / Chinese Name] block
+# To share notes: send this file to a friend or upload to forum
+#
+# ════════════════════════════════════════════════════════════════════
+
+
+# ────────── Act 1 ──────────
+
+
+[Clearfell / 皆伐]
+{
+1-1 Follow the edge to find Mysterious Camp, pick up a Tier 1 Skill Gem. Follow the middle road to find Beyla and get +10% Cold Resistance.
+Next -> The Grelwood
+}
+
+[The Grelwood / 葛瑞爾林]
+{
+1-2 Defeat Great Cauldron Witch to get a Tier 1 Support Gem. Enter Grim Tangle, activate the Waypoint at the Great Tree. Red Vale entrance is near the thorn monsters.
+Next -> The Red Vale
+}
+
+[The Red Vale / 赤谷]
+{
+1-3 Destroy 3 pillars to get the Quest Item. Return to Grelwood to free the Hooded One, go back to town to talk to Una, then enter Grim Tangle.
+Next -> The Grim Tangle
+}
+
+[The Grim Tangle / 纏縛陰林]
+{
+1-4 Check the world map for Cemetery of the Eternals — if it's bottom-left on the map, the exit here is also bottom-left, and vice versa.
+Next -> Cemetery of the Eternals
+}
+
+[Cemetery of the Eternals / 不朽帝國之墓]
+{
+1-5 Find the Tomb of the Consort and Mausoleum of the Praetor.
+Next -> Tomb of the Consort
+}
+
+[Tomb of the Consort / 配偶的墓室]
+{
+1-6 Find the Vault of Contention, kill the Elite to get a Tier 1 Support Gem.
+Next -> Mausoleum of the Praetor
+}
+
+[Mausoleum of the Praetor / 政務官陵墓]
+{
+1-7 Boss Room is usually diagonally opposite the entrance. After picking up the Quest Item, return to the Cemetery of the Eternals Waypoint to open the gate, then kill the Boss.
+Next -> Hunting Grounds
+}
+
+[Hunting Grounds / 獵場]
+{
+1-8 Follow the edge: kill Tree Spirit Ritualist for a Tier 1 Support Gem; kill Crowbell for +2 Passive Skill Book; locate Freythorn Waypoint.
+Tip: Reach Level 9
+Next -> Ogham Farmlands
+}
+
+[Ogham Farmlands / 奧格姆農地]
+{
+1-9 Follow the main road to find Una's Hut and pick up Una's Lute. Continue to the end of the road and enter Ogham Village, activate the Waypoint. Return to Camp to restock flasks and check gear. Teleport to Hunting Grounds then Checkpoint-teleport to Freythorn.
+Tip: Reach Level 10
+Next -> Freythorn
+}
+
+[Freythorn / 弗雷索恩]
+{
+1-10 Activate 3 small altars first, then kill the Great Altar Boss to get 30 Spirit.
+Next -> Ogham Village
+}
+
+[Ogham Village / 奧格姆村]
+{
+1-11 From the entrance, head diagonally upward (feel it out). Find the Boss entrance Checkpoint. If you haven't found the Quest Item en route, return to the entrance Waypoint and head downward to find it. Kill the Ogham Village Boss and rescue the NPC.
+Next -> The Manor Ramparts
+}
+
+[The Manor Ramparts / 宅第壁壘]
+{
+1-12 Layout is usually a reversed-C shape. Follow the C shape around, find the gallows to get a Tier 1 Support Gem, continue to Ogham Manor Entrance.
+Tip: Level 12.5 or 13
+Next -> Ogham Manor
+}
+
+[Ogham Manor / 奧格姆宅第]
+{
+1-13 On the first floor follow the edges. Find the Candlelit Boss for +20 Maximum Life — fight it if your damage is good, otherwise come back at Level 14. Floors connect via stairs: Floor 2 entrance is bottom-left of Floor 1, Floor 3 entrance is top-right of Floor 2. Boss Room is usually top-left of Floor 3. Kill the Final Boss, return to town, complete all quests, talk to the Hooded One to enter Act 2.
+Tip: Be Level 14 before the Final Boss
+}
+
+[Clearfell Encampment / 皆伐營地]
+{
+Next -> Clearfell
+}
+
+[Lost Temple / 失落神廟]
+{
+}
+
+[Mud Burrow / 泥沼陋居]
+{
+}
+
+[Root Hollow / 盤根魔域]
+{
+}
+
+[The Riverbank / 河岸]
+{
+Next -> Clearfell Encampment
+}
+
+# ────────── Act 2 ──────────
+
+[Vastiri Outskirts / 瓦斯提里郊區]
+{
+2-1 Follow the edge, find the Wilderness Camp — chest drops a Tier 2 Support Gem. Continue along the edge, find and kill the Boss. Return to town and dialogue.
+Next -> Mawdun Quarry
+}
+
+[Mawdun Quarry / 莫頓挖石場]
+{
+2-2 Follow the edge or aim diagonally. Armour shards drop frequently here — new players can farm a bit.
+Next -> Mawdun Mine
+}
+
+[Mawdun Mine / 莫頓礦坑]
+{
+2-3 Boss Room is in the top-left corner. Follow the railroad tracks. Kill Boss, return to town and dialogue.
+Next -> Traitor's Passage
+}
+
+[Traitor's Passage / 叛徒之路]
+{
+2-4 Complex layout. Follow the outermost path to navigate through. Mid-way you'll hit a Runic Fork — the entrance with runes leads to Barbara's Boss Room; kill her to get the Exalted Orb. Then follow the edge; if stuck, backtrack to the fork and take the other path. The map has 3–5 narrow uphill sections — finding one means you're on the right path.
+Next -> The Halani Gates
+}
+
+[The Halani Gates / 哈拉妮關口]
+{
+2-5 Single corridor. Respawn at the mid-Checkpoint to let the NPC catch up. Kill the Gate Boss, enter the dead end, return to town.
+Tip: Minimum Level 18
+Next -> Mastodon Badlands
+}
+
+[Mastodon Badlands / 乳齒象惡地]
+{
+2-6 Optionally enter Trial of the Sekhemas here. Otherwise follow the edge to find Bone Shrine and pick up a Tier 2 Support Gem. Continue to Bone Pits.
+Next -> The Bone Pits
+}
+
+[The Bone Pits / 骨坑]
+{
+2-7 Head straight toward the exit until the end. You'll usually hit a Checkpoint — go left or right based on luck to find the Boss Room. Kill lots of dogs along the way to drop the Quest Item. Kill Boss, return to town.
+Tip: Sun Clan Relic
+Next -> Keth
+}
+
+[Keth / 凱斯城]
+{
+2-8 Follow the edge to find the lower exit. Find Kabala — usually near the middle-sides of the map. If not on one side, try the other. Kill for +2 Passive Skill Book.
+Next -> The Lost City
+}
+
+[The Lost City / 失落之城]
+{
+2-9 Head straight to the end, then go left or right by luck, then up or down by luck to find the next floor entrance. Check if the Quest Item has dropped — if not, return to Keth and keep killing until it drops.
+Tip: Sun Clan Relic
+Next -> Buried Shrines
+}
+
+[Buried Shrines / 掩埋神殿]
+{
+2-10 Follow the edge to find the Elemental Offering Shrine — choose a ring (Fire recommended). Continue along the edge to the Boss Room Entrance. Season mechanic may drop low-tier Artificer's Orbs. Kill the Boss, ignite the goddess, return to town and hand in quest.
+Tip: Charm Slot reward
+Next -> Valley of the Titans
+}
+
+[Valley of the Titans / 泰坦之谷]
+{
+2-11 Follow the path straight, find the next floor entrance, then follow the edge to find 3 quest points and a Waypoint. Place Quest Items from Bone Pits and Keth onto the Waypoint Altar. Valley of the Titans is rectangular — walk the long side first, then find the Boss along the edges. Kill Boss, return to town.
+Tip: Charm reward
+Next -> Deshar
+}
+
+[Deshar / 戴斯哈]
+{
+2-12 Head straight forward, enter the residential area, follow the edge to find the next floor entrance. Find the Quest Item letter (+2 Passive Points) — usually below one of the houses.
+Tip: Level 25
+Next -> Path of Mourning
+}
+
+[Path of Mourning / 悼念之路]
+{
+2-13 Follow one direction, enter next zone.
+Next -> The Spires of Deshar
+}
+
+[The Spires of Deshar / 戴斯哈尖塔]
+{
+2-14 Follow one direction to find the Boss Room. Find a Checkpoint mid-map and interact with the Quest Item to get +10% Lightning Resistance.
+Tip: Level 26
+Next -> The Dreadnought
+}
+
+[The Dreadnought / 無畏隊]
+{
+2-15 The Dreadnought has only one map this season. Kill the Final Boss, return to town, follow the prompts to enter Act 3.
+Tip: Best to be Level 29
+}
+
+[Abyssal Depths / 無盡深淵]
+{
+}
+
+[Dreadnought Vanguard / 無畏隊先鋒]
+{
+}
+
+[Lightless Passage / 無光通道]
+{
+}
+
+[The Ardura Caravan / 阿杜拉車隊]
+{
+}
+
+[The Black Cathedral / 黑色大教堂]
+{
+}
+
+[The Dreadnought's Wake / 無畏隊的軌跡]
+{
+}
+
+[The Titan Grotto / 泰坦石窟]
+{
+}
+
+[The Well of Souls / 靈魂深井]
+{
+}
+
+[Trial of the Sekhemas / 絲克瑪試煉]
+{
+}
+
+# ────────── Act 3 ──────────
+
+[Sandswept Marsh / 風沙沼澤]
+{
+3-1 Follow the edge. Optionally find the Root Mire to get a Tier 9 Skill Gem (skippable). Find Orok Camp, open the chest for a low-tier Artificer's Orb — first Tier 3 Support Gem this season. Continue along the edge to the exit.
+Next -> Jungle Ruins
+}
+
+[Jungle Ruins / 叢林遺跡]
+{
+3-2 Follow the path to find the Waypoint, then enter Venom Crypts.
+Next -> The Venom Crypts
+}
+
+[The Venom Crypts / 劇毒墓穴]
+{
+3-3 Follow the edge to find the Quest Item and Tier 3 Support Gem chest (usually opposite each other). After picking up Quest Item, return to Jungle Ruins, continue along the map, kill the Ape God for +2 Passive Skill Book. The next zone entrance is around Ape God — find the Waterways Entrance.
+Tip: Caustic Flask reward
+Next -> Infested Barrens
+}
+
+[Infested Barrens / 感染荒地]
+{
+3-4 Head straight to find the Waypoint, then follow the edge to find the Chimeral Wetlands Entrance.
+Tip: Azak Bog — 30 Spirit reward
+Next -> Chimeral Wetlands
+}
+
+[Chimeral Wetlands / 龍蜥濕地]
+{
+3-5 Follow the edge to find the Chaos Shrine and Boss Room. Kill Boss and enter the next zone.
+Tip: Level 32
+Next -> Jiquani's Machinarium
+}
+
+[Jiquani's Machinarium / 吉卡尼的機械迷城]
+{
+3-6 Head right first to find the Core (70% chance it's on the right); if not found, check left. Use a movement skill to cross the first section, then go to the middle to find 2 Cores (NOTE: respawning at a Checkpoint makes Cores disappear). Follow the corridor to the exit — Boss Room is usually opposite the exit. Kill Boss for +10% Fire Resistance.
+Next -> Jiquani's Sanctum
+}
+
+[Jiquani's Sanctum / 吉卡尼的聖域]
+{
+3-7 Find Checkpoints on both left and right sides — you can respawn here to refresh Quest Item positions and load them onto the Generator. Then respawn back at entrance, push forward and kill the Boss for the Quest Item. Teleport to Jungle Ruins, place the Core at the Waterways Entrance to proceed.
+Next -> The Azak Bog
+}
+
+[The Azak Bog / 阿札克泥沼]
+{
+3-8 Enter the bog. Boss is usually top-right. Kill it for the Quest Item.
+Next -> The Matlan Waterways
+}
+
+[The Matlan Waterways / 瑪特蘭水道]
+{
+3-10 Clear the waterway and return to the main town. Head downward to talk to Awa, then enter The Drowned City.
+Next -> The Drowned City
+}
+
+[The Drowned City / 淹沒之城]
+{
+3-11 After the Waypoint, head down along the Flagstone Path. If the bottom-left path is blocked, there's no vault this run. At the Checkpoint go straight then split — one side is the Molten Vault, the other is the exit. Visit Molten Vault first.
+Next -> The Molten Vault
+}
+
+[The Molten Vault / 熔岩寶庫]
+{
+3-12 Navigate clockwise overall. Boss is bottom-right. Kill Boss to get Quest Item. Return to The Drowned City and proceed to the next zone.
+Tip: Level 36
+Next -> Apex of Filth
+}
+
+[Apex of Filth / 污垢頂峰]
+{
+3-13 Past the first Checkpoint, take the fork toward top-left (70% Boss is there). If not found, check the top section (Boss may be top-right). Kill Boss and get Quest Item. Return to The Drowned City, walk toward the entrance into the Camp, then go straight to place the item at the Temple Entrance.
+Next -> Temple of Kopec
+}
+
+[Temple of Kopec / 科佩克神殿]
+{
+3-14 Map is triangular — lower floor entrances are at the corners. If you get unlucky with layout, respawn at Checkpoint to reroll. Kill Boss, dialogue, wait for Awa to glitch out, return to town, go through the Time Portal and head downward.
+Next -> Utzaal
+}
+
+[Utzaal / 奧札爾]
+{
+3-15 Follow the Flagstone Path to find and kill the Boss. No Flagstone Path = wrong direction.
+Tip: Heart of Sacrifice (also available in Aggorat)
+Next -> Aggorat
+}
+
+[Aggorat / 阿戈拉]
+{
+3-16 Head top-left through the door to activate a Checkpoint. Activate another Checkpoint at the top-left middle. Continue top-left to find the next zone entrance. Kill the tall humanoid mob for the Heart of Sacrifice. At the top-right of the map, interact with the stake to get +2 Passive Points. Return to the top-left Checkpoint and enter the next zone.
+Tip: Level 39
+Next -> The Black Chambers
+}
+
+[The Black Chambers / 漆黑密室]
+{
+3-17 Boss is in the top-left corner. Kill Boss, return to town, follow prompts to enter next act.
+}
+
+[Atziri's Temple / 阿茲里的神廟]
+{
+}
+
+[Library of Kamasa / 卡瑪薩圖書館]
+{
+}
+
+[The Temple of Chaos / 混沌神殿]
+{
+}
+
+[Vaal Ruins / 瓦爾遺跡]
+{
+}
+
+[Ziggurat Encampment / 高地神塔營地]
+{
+}
+
+# ────────── Act 4 ──────────
+
+[Isle of Kin / 金氏島]
+{
+4-1 Find Beast Pens and kill the Elite mob for a Tier 4 Support Gem. Follow the edge to find the next zone entrance.
+Tip: Stay 3+ levels ahead / 16-level gap warning
+Next -> Volcanic Warrens
+}
+
+[Volcanic Warrens / 火山迷窟]
+{
+4-2 Head to the furthest point, then backtrack slightly to find the Boss. Kill Boss and return to the ship.
+Next -> Kedge Bay
+}
+
+[Kedge Bay / 凱吉灣]
+{
+4-3 Head to the furthest point to reach Journey's End. Kill Boss, return to town, find Danig to pick up Quest Item. Return via portal to do quest and kill mobs. Return to town and find Yuanzheng (bottom area) for +2 Passive Points.
+Next -> Shrike Island
+}
+
+[Shrike Island / 伯勞鳥之島]
+{
+4-4 Straight path, kill Boss, talk to NPC, return to ship. Enter Eye of Hinekora.
+Next -> Eye of Hinekora
+}
+
+[Eye of Hinekora / 悉妮蔻拉之眼]
+{
+4-5 Single corridor. After clearing 3 gates, head upward to find Navali's Rest and claim the Maximum Mana reward.
+Next -> Halls of the Dead
+}
+
+[Halls of the Dead / 亡者之殿]
+{
+4-6 Pick up 3 Tattoos from top-left, top-right, and bottom-right (choose Resistance ones). After clearing bottom-right, head right to kill the Boss for the Quest Item, then go upward.
+Next -> Trial of the Ancestors
+}
+
+[Trial of the Ancestors / 祖靈的試煉]
+{
+4-7 Head upward, talk to NPC to get Quest Item, receive +2 Passive Points, return to ship.
+Next -> Whakapanu Island
+}
+
+[Whakapanu Island / 瓦卡帕努島]
+{
+4-8 Follow the inner ring to find sandy ground — usually leads to the next zone entrance. If not found, follow the outer edge.
+Next -> Singing Caverns
+}
+
+[Singing Caverns / 吟謠洞窟]
+{
+4-9 Boss is in top-right, top-left, or centre. Pearl Necklace is diagonally opposite the Boss Room. Kill Boss and return to ship.
+Next -> Abandoned Prison
+}
+
+[Abandoned Prison / 廢棄監獄]
+{
+4-10 Entrance is bottom-right / top-right / bottom-left. Find the Chapel, kill black-robed mobs to drop the key, enter the Chapel and choose between Life or Mana recovery.
+Next -> Solitary Confinement
+}
+
+[Solitary Confinement / 單獨禁閉室]
+{
+4-11 Single corridor. Use wolf leap to pass through the fence. Kill Boss, wait for the Hooded One dialogue, return to ship.
+Next -> Arastas
+}
+
+[Arastas / 阿拉塔斯]
+{
+4-12 Kill mobs at the entrance, then head uphill. At the mid-Checkpoint: going clockwise upward yields 3x Exalted Orbs; going downward into town yields 3x Divine Orbs. Then go straight to the Boss.
+Next -> The Excavation
+}
+
+[The Excavation / 挖掘]
+{
+4-13 Map is usually C or L shaped. Head straight from the entrance to find a Checkpoint and Temple. Then go upward or left — Boss is usually top-left. Kill Boss, follow story, return to town and talk to the Hooded One.
+Next -> Ngakanu
+}
+
+[Ngakanu / 尼加卡努]
+{
+4-14 Follow the edge — entrance is on the right or top side. Season mechanic may drop high-tier Artificer's Orbs.
+Next -> Heart of the Tribe
+}
+
+[Heart of the Tribe / 部族之心]
+{
+4-15 Follow the main road. If you hit a Checkpoint, turn back (the way ahead is a dead end). Kill Boss, return to town, enter the Interlude.
+Next -> The Khari Bazaar
+}
+
+[Brinerot Cove / 布琳洛特海灣]
+{
+}
+
+[Isle of Decay / 腐化之島]
+{
+}
+
+[Journey's End / 旅程之末]
+{
+}
+
+[Kingsmarch / 金司馬區]
+{
+}
+
+[Plunder's Point / 掠奪者之角]
+{
+}
+
+# ────────── Interlude ──────────
+
+[Ashen Forest / 灰燼森林]
+{
+Interlude: Woodland Glade-1  Head left — next zone entrance is on the left side.
+}
+
+[Scorched Farmlands / 火噬農地]
+{
+Interlude: The Refuge-1  Head bottom-left to activate Checkpoint, then bottom-right to kill Boss, continue bottom-right to next zone.
+}
+
+[The Khari Crossing / 卡里交匯道]
+{
+Interlude: Khari Bazaar-1  Head right out the door, kill 2 Bosses, return to town and talk to Surei for +2 Passive Skill Book. The top area has a Lava Shrine — pick up Quest Item to gain Maximum Life. Follow the edge left to The Galai Gates and activate the Waypoint. From Bazaar Camp, exit left, continue left into Pools of Khatal, head down-left to enter next zone.
+Tip: +2 Passive Skill Book / 5% Maximum Life
+}
+
+[Kriar Village / 庫萊亞村]
+{
+Interlude: Woodland Glade-2  Head bottom-left. Boss is bottom-left. Kill Boss to enter next zone.
+Tip: 40 Spirit
+}
+
+[Sel Khari Sanctuary / 塞爾卡里庇護所]
+{
+Interlude: Khari Bazaar-2  Follow the edge to activate Checkpoint, drop an item to activate the Altar and pick a necklace. Head top-left to kill Boss, then return to town and teleport to The Galai Gates.
+}
+
+[Stones of Serle / 瑟雷之石]
+{
+Interlude: The Refuge-2  Follow the edge to light all stone markers, return to the centre to kill Boss. Wait a moment after dialogue, return to Scorched Farmlands, teleport to the left Checkpoint, and enter the next zone.
+}
+
+[Glacial Tarn / 冰川湖泊]
+{
+Interlude: Woodland Glade-3  Follow the right edge to find Howling Caves. Then head top-left to find and kill the Boss to enter next zone.
+}
+
+[The Blackwood / 黑木林]
+{
+Interlude: The Refuge-3  Head slightly upper-left to enter the next zone.
+}
+
+[The Galai Gates / 賈萊關口]
+{
+Interlude: Khari Bazaar-3  Head straight, enter the right door. At the first fork, turn left and continue down. Past the Checkpoint, at the first fork go right-upward to kill Boss. Enter Qimah.
+}
+
+[Holten / 霍爾登]
+{
+Interlude: The Refuge-4  Head top-right to enter Holten Estate. Head upward to enter Wolvenhold. A vendor NPC selling high-tier Runes is in the centre of the map.
+}
+
+[Howling Caves / 狂嗥洞穴]
+{
+Interlude: Woodland Glade-4  Enter and head right, then keep going down. Kill Boss to get Quest Item. Return to town and hand in quest to Siltan.
+Tip: +2 Passive Points
+}
+
+[Qimah / 奇瑪]
+{
+Interlude: Khari Bazaar-4  Follow the edge to find the Spirit Pillar (choose Resistance). Head to the top-right of the map to dialogue and enter Qimah Reservoir.
+Tip: Spirit Pillar reward
+}
+
+[Holten Estate / 霍爾登宅第]
+{
+Interlude: The Refuge-5  Head straight. Boss is top-right or top-left. Kill Boss to get +2 Passive Skill Book. Exit.
+Tip: +2 Passive Skill Book
+}
+
+[Kriar Peaks / 庫萊亞山巔]
+{
+Interlude: Woodland Glade-5  Follow the edge left to find the NPC and choose a Hunter's Belt. Then head top-right to enter next zone.
+Tip: Old Man gifts a Unique item
+}
+
+[Qimah Reservoir / 奇瑪水源地]
+{
+Interlude: Khari Bazaar-5  Single main road, go straight to kill Boss. Return to town and enter the next Interlude.
+Next -> The Glade
+}
+
+[Etched Ravine / 蝕刻溪谷]
+{
+Interlude: Woodland Glade-6  Single path, kill Boss, enter next zone.
+}
+
+[Wolvenhold / 狼之要塞]
+{
+Interlude: The Refuge-6  Circle around the centre (go up, loop around, come down) to kill Boss. Return to town, talk to Runli and the Hooded One. Return to Act 4 main town for final dialogue — story complete!
+Tip: Full campaign clear!
+}
+
+[The Cuachic Vault / 庫阿西克寶庫]
+{
+Interlude: Woodland Glade-7  First and second rooms go upward. Third room go right. Find and kill Boss. Dialogue, return to town.
+Next -> The Refuge
+}
+
+[Pools of Khatal / 卡塔爾之塘]
+{
+}
+
+[The Glade / 林間空地]
+{
+}
+
+[The Khari Bazaar / 卡里市集]
+{
+}
+
+[The Refuge / 庇護所]
+{
+}

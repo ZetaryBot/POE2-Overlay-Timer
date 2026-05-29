@@ -137,6 +137,17 @@ class PoeMonitor:
         except psutil.NoSuchProcess:
             return False
 
+    def _is_own_process_focused(self) -> bool:
+        """True when our own tkinter window/menu is the foreground window."""
+        try:
+            fg = win32gui.GetForegroundWindow()
+            if fg == 0:
+                return False
+            _, pid = win32process.GetWindowThreadProcessId(fg)
+            return pid == os.getpid()
+        except Exception:
+            return False
+
     # ── Focus loop ────────────────────────────────────────────────────────
 
     def _focus_loop(self):
@@ -169,10 +180,12 @@ class PoeMonitor:
                 else:
                     # Running but not focused
                     if self._was_focused:
-                        self._log('PoE2 lost focus – hiding overlay')
-                        self._schedule(self._overlay.hide)
-                        self._stopwatch.auto_pause()
-                        self._was_focused = False
+                        # Don't hide if our own overlay/menu grabbed focus
+                        if not self._is_own_process_focused():
+                            self._log('PoE2 lost focus – hiding overlay')
+                            self._schedule(self._overlay.hide)
+                            self._stopwatch.auto_pause()
+                            self._was_focused = False
                     self._was_running = True
 
             except Exception:

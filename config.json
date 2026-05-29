@@ -1,13 +1,14 @@
 {
-  "client_log_path": "",
+  "client_log_path": "C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile 2\\logs\\Client.txt",
+  "active_notes_file": "tip_with_050.txt",
   "hotkeys": {
     "stopwatch_toggle": "f4",
     "copy_notes": "v",
     "hide_content": "home"
   },
   "overlay": {
-    "x": -1,
-    "y": -1,
+    "x": 1113,
+    "y": 235,
     "width": -1,
     "opacity": 0.88
   }

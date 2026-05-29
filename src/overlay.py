@@ -22,6 +22,7 @@ Drag:
 Right-click context menu:
   • Copy notes / Reload notes / Exit
 """
+import ctypes
 import tkinter as tk
 import tkinter.font as tkfont
 
@@ -40,10 +41,12 @@ DIVIDER_COLOR   = '#2E2E2E'
 
 
 class OverlayWindow:
-    def __init__(self, config: dict, stopwatch: Stopwatch, notes_manager: NotesManager):
-        self._config        = config
-        self._stopwatch     = stopwatch
-        self.notes_manager  = notes_manager
+    def __init__(self, config: dict, stopwatch: Stopwatch,
+                 notes_manager: NotesManager, save_config=None):
+        self._config         = config
+        self._stopwatch      = stopwatch
+        self.notes_manager   = notes_manager
+        self._save_config_fn = save_config  # called after file selection to persist
 
         # Set by App after full construction
         self.poe_monitor = None
@@ -123,7 +126,7 @@ class OverlayWindow:
             widget.bind('<B1-Motion>',       self._drag_motion)
             widget.bind('<ButtonRelease-1>', self._drag_end)
 
-        # Right-click context menu on timer row
+        # Right-click context menu on timer row AND notes area
         for widget in (self._row_top, self._lbl_timer, self._lbl_map):
             widget.bind('<Button-3>', self._show_context_menu)
 
@@ -155,19 +158,11 @@ class OverlayWindow:
         )
         self._scrollbar.configure(command=self._txt_notes.yview)
         self._txt_notes.pack(side='left', fill='both', expand=True)
+        # Right-click on notes area opens the same context menu
+        for widget in (self._frame_notes, self._txt_notes, self._scrollbar):
+            widget.bind('<Button-3>', self._show_context_menu)
 
-        # ── Context menu ──────────────────────────────────────────────────
-        self._menu = tk.Menu(
-            r, tearoff=0,
-            bg='#2D2D2D', fg='#FFFFFF',
-            activebackground='#444444', activeforeground='#FFFFFF',
-            relief='flat',
-        )
-        self._menu.add_command(label='Copy notes  [V]',    command=self._do_copy_notes)
-        self._menu.add_separator()
-        self._menu.add_command(label='Reload notes files', command=self._do_reload_notes)
-        self._menu.add_separator()
-        self._menu.add_command(label='Exit',               command=self._do_exit)
+        self._popup = None      # custom right-click popup (no-activate Toplevel)
 
         r.withdraw()   # start hidden
 
@@ -194,10 +189,101 @@ class OverlayWindow:
     # ── Context menu ──────────────────────────────────────────────────────────
 
     def _show_context_menu(self, e: tk.Event):
+        """Show a no-activate popup so the fullscreen game never minimizes.
+        We build a Toplevel and show it via ShowWindow(SW_SHOWNOACTIVATE)
+        instead of tk_popup(), which always activates its window."""
+        self._close_popup()
+        mx, my = e.x_root, e.y_root
+
+        p = tk.Toplevel(self.root)
+        p.withdraw()
+        p.overrideredirect(True)
+        p.wm_attributes('-topmost', True)
+        p.configure(bg='#3A3A3A')   # 1-px border colour
+
+        f = tkfont.Font(family='Consolas', size=self._fs_notes)
+
+        def add_item(text, cmd=None):
+            lbl = tk.Label(p, text=text,
+                           bg='#2D2D2D', fg='#FFFFFF',
+                           font=f, anchor='w', padx=14, pady=3)
+            lbl.pack(fill='x', padx=1, pady=0)
+            if cmd:
+                def on_click(_, c=cmd):
+                    self._close_popup()
+                    self.root.after(1, c)
+                lbl.bind('<Button-1>', on_click)
+                lbl.bind('<Enter>', lambda _, w=lbl: w.configure(bg='#444444'))
+                lbl.bind('<Leave>', lambda _, w=lbl: w.configure(bg='#2D2D2D'))
+
+        def add_sep():
+            tk.Frame(p, bg='#555555', height=1).pack(fill='x', padx=0, pady=2)
+
+        add_item('Copy notes  [V]', self._do_copy_notes)
+        add_sep()
+        files        = self.notes_manager.list_files()
+        active_count = sum(1 for _, a in files if a)
+        all_active   = (active_count == len(files))
+        for fname, is_active in files:
+            mark = '\u25cf' if (is_active and not all_active) else '\u25cb'
+            add_item(f'{mark}  {fname}', lambda fn=fname: self._select_notes_file(fn))
+        add_sep()
+        add_item('Reload all notes', self._do_reload_notes)
+        add_sep()
+        add_item('Exit', self._do_exit)
+
+        # Compute natural size, position near cursor but keep on screen
+        p.update_idletasks()
+        pw = p.winfo_reqwidth()
+        ph = p.winfo_reqheight()
+        sw = p.winfo_screenwidth()
+        sh = p.winfo_screenheight()
+        x  = max(0, min(mx, sw - pw))
+        y  = max(0, min(my, sh - ph))
+        p.geometry(f'{pw}x{ph}+{x}+{y}')
+        p.update_idletasks()
+
+        # Apply WS_EX_NOACTIVATE, then show WITHOUT activating
         try:
-            self._menu.tk_popup(e.x_root, e.y_root)
-        finally:
-            self._menu.grab_release()
+            GWL_EXSTYLE       = -20
+            WS_EX_NOACTIVATE  = 0x08000000
+            SW_SHOWNOACTIVATE = 4
+            hwnd = ctypes.windll.user32.GetParent(p.winfo_id())
+            if not hwnd:
+                hwnd = p.winfo_id()
+            style = ctypes.windll.user32.GetWindowLongW(hwnd, GWL_EXSTYLE)
+            ctypes.windll.user32.SetWindowLongW(hwnd, GWL_EXSTYLE,
+                                                style | WS_EX_NOACTIVATE)
+            ctypes.windll.user32.ShowWindow(hwnd, SW_SHOWNOACTIVATE)
+        except Exception:
+            p.deiconify()   # safe fallback
+
+        self._popup = p
+        # Close popup on any left-click on the overlay itself
+        self.root.bind('<Button-1>', lambda _: self._close_popup(), add='+')
+
+    def _close_popup(self):
+        if self._popup is not None:
+            try:
+                self._popup.destroy()
+            except Exception:
+                pass
+            self._popup = None
+
+    def _select_notes_file(self, fname: str):
+        self.notes_manager.select_file(fname)
+        if self._save_config_fn:
+            self._save_config_fn()   # persist immediately
+        if self._current_map:
+            notes = self.notes_manager.find_notes(self._current_map)
+            self.set_map(self._current_map, notes)
+
+    def _reset_notes_file(self):
+        self._config['active_notes_file'] = ''
+        self.notes_manager.reload()
+        if self._current_map:
+            notes = self.notes_manager.find_notes(self._current_map)
+            self.set_map(self._current_map, notes)
 
     def _do_copy_notes(self):
         import pyperclip
@@ -209,6 +295,9 @@ class OverlayWindow:
 
     def _do_reload_notes(self):
         self.notes_manager.reload()
+        if self._current_map:
+            notes = self.notes_manager.find_notes(self._current_map)
+            self.set_map(self._current_map, notes)
 
     def _do_exit(self):
         if self.poe_monitor:
@@ -221,6 +310,23 @@ class OverlayWindow:
         if not self._is_visible:
             self.root.deiconify()
             self._is_visible = True
+            # Apply WS_EX_NOACTIVATE after first deiconify so the HWND is live.
+            # This prevents the overlay from stealing focus from a fullscreen
+            # game when the user clicks or drags it.
+            self.root.after(10, self._apply_noactivate)
+
+    def _apply_noactivate(self):
+        try:
+            GWL_EXSTYLE      = -20
+            WS_EX_NOACTIVATE = 0x08000000
+            hwnd = ctypes.windll.user32.GetParent(self.root.winfo_id())
+            if not hwnd:
+                hwnd = self.root.winfo_id()
+            style = ctypes.windll.user32.GetWindowLongW(hwnd, GWL_EXSTYLE)
+            ctypes.windll.user32.SetWindowLongW(hwnd, GWL_EXSTYLE,
+                                                style | WS_EX_NOACTIVATE)
+        except Exception:
+            pass
 
     def hide(self):
         if self._is_visible:
@@ -281,6 +387,12 @@ class OverlayWindow:
     def _remeasure_notes(self):
         """Accurate re-measurement after the window is fully laid out."""
         if not self._current_notes or not self._show_content:
+            return
+        # If the widget hasn't been rendered to its real pixel width yet,
+        # wait another 50 ms and retry rather than measuring against width=0/1
+        # (which would count every character as its own display line).
+        if self._txt_notes.winfo_width() <= 1:
+            self.root.after(50, self._remeasure_notes)
             return
         lh    = self._fs_notes + 6
         max_h = int(self.root.winfo_screenheight() * 0.45)

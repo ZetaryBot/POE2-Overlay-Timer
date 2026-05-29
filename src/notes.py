@@ -32,9 +32,41 @@ class NotesManager:
         self._notes.clear()
         notes_dir = self._notes_dir()
         os.makedirs(notes_dir, exist_ok=True)
+        active = self._config.get('active_notes_file', '')
         for fname in sorted(os.listdir(notes_dir)):
-            if fname.lower().endswith('.txt') and fname != 'template_empty.txt':
-                self._parse_file(os.path.join(notes_dir, fname))
+            full = os.path.join(notes_dir, fname)
+            if os.path.isdir(full):
+                continue
+            if not fname.lower().endswith('.txt'):
+                continue
+            if fname == 'template_empty.txt':
+                continue
+            # If a specific file is selected, only load that one
+            if active and fname != active:
+                continue
+            self._parse_file(full)
+
+    def list_files(self) -> list:
+        """Return [(filename, is_active), ...] for all user .txt files."""
+        notes_dir = self._notes_dir()
+        active    = self._config.get('active_notes_file', '')
+        result    = []
+        for fname in sorted(os.listdir(notes_dir)):
+            full = os.path.join(notes_dir, fname)
+            if (fname.lower().endswith('.txt')
+                    and fname != 'template_empty.txt'
+                    and not os.path.isdir(full)):
+                # active=='' means "all files" — show all as active
+                is_active = (active == '') or (fname == active)
+                result.append((fname, is_active))
+        return result
+
+    def select_file(self, fname: str):
+        """Exclusively activate one notes file (radio-button style) and reload."""
+        current = self._config.get('active_notes_file', '')
+        # Clicking the already-active file resets to "all files"
+        self._config['active_notes_file'] = '' if fname == current else fname
+        self.reload()
 
     def find_notes(self, map_name: str) -> str:
         """Return note body for *map_name*, or '' if not found."""
